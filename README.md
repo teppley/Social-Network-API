@@ -35,10 +35,11 @@ View all users - `Get - /api/users`
 
 View user by ID - `Get - /api/users/:userId`
 
-Create a new user - `Post - /api/users` (add text JSON) {"username" : " ", "email" : " "}
+Create a new user - `Post - /api/users` 
+(add text JSON) {"username" : " ", "email" : " "}
 
-Update a user by ID - `Put - /api/users/:userId` (add text JSON) 
-{"username" : " ", "email" : " "}
+Update a user by ID - `Put - /api/users/:userId` 
+(add text JSON) {"username" : " ", "email" : " "}
 
 Delete a user by ID - `Del - /api/users/:userId`
 
@@ -53,16 +54,16 @@ View all thoughts - `Get - /api/thoughts`
 
 View thought by ID - `Get - /api/thoughts/thoughtId`
 
-Create a thought - `Post - /api/thoughts` (add text JSON)
-{"thoughtText" : " ", "username" : " ", "userId" : " "}
+Create a thought - `Post - /api/thoughts` 
+(add text JSON) {"thoughtText" : " ", "username" : " ", "userId" : " "}
 
-Update a thought by ID - `Put - /api/thoughts/thoughtId` (add text JSON)
-{"thoughtText" : " "}
+Update a thought by ID - `Put - /api/thoughts/thoughtId` 
+(add text JSON) {"thoughtText" : " "}
 
 Delete a thought by ID - `Del - /api/thoughts/thoughtId`
 
-Create a reaction - `Post - /:thoughtId/reactions` (add text JSON)
-{"reactionBody" : " ", "username" : " ", "userId" : " "}
+Create a reaction - `Post - /:thoughtId/reactions` 
+(add text JSON) {"reactionBody" : " ", "username" : " ", "userId" : " "}
 
 ## Contributing
 
