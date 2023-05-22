@@ -10,7 +10,7 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // get single thought
+  // Get single thought
   async getSingleThought(req, res) {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId }).select("-__v");
@@ -25,7 +25,7 @@ module.exports = {
     }
   },
   
-  //create a thought and push the created thought's _id to the associated user's thoughts array field
+  // Create a thought
   createThought(req, res) {
     Thought.create(req.body)
       .then(({ _id }) => {
@@ -37,12 +37,12 @@ module.exports = {
       })
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No User find with this ID!" })
+          ? res.status(404).json({ message: "No User found with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
-  //update a thought
+  // Update a thought
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -51,17 +51,17 @@ module.exports = {
     )
       .then((user) =>
         !user
-          ? res.status(404).json({ message: "No thought find with this ID!" })
+          ? res.status(404).json({ message: "No thought found with this ID!" })
           : res.json(user)
       )
       .catch((err) => res.status(500).json(err));
   },
-  //delete a thought
+  // Delete a thought
   deleteThought(req, res) {
     Thought.findOneAndDelete({ _id: req.params.thoughtId })
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No thought find with this ID!" })
+          ? res.status(404).json({ message: "No thought found with this ID!" })
           : User.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
               { $pull: { thoughts: req.params.thoughtId } },
@@ -75,7 +75,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  //create reaction
+  // Create reaction
   createReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -84,12 +84,12 @@ module.exports = {
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No thought frind with ID!" })
+          ? res.status(404).json({ message: "No thought found with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
-  //delete reaction
+  // Delete reaction
   deleteReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -98,7 +98,7 @@ module.exports = {
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No thought find with this ID!" })
+          ? res.status(404).json({ message: "No thought found with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));

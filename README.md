@@ -4,6 +4,7 @@
 
 ## Description
 
+This application is an API for a social network website. Users can share thoughts, add friends, and react to thoughts. This application was made using MongoDB, Mongoose, and Moment to create timestamps. Users will need to install Postman or Insomnia to utilize the application.
 
 ## Demo Video
 
@@ -14,7 +15,6 @@ https://drive.google.com/file/d/1PGOO8R0BZoeAl5XEFQe4H7PEohdWGoQX/view
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
 
@@ -27,7 +27,7 @@ The routes can now be utilized using Postman or Insomnia.
 
 ## Usage
 
-Users will need to use Postman or Insomnia to utilize the API.
+Users will need to install Postman or Insomnia to utilize the API. Data will need to be first seeded to the database using post routes to Users and Thoughts.
 
 ## User and Friend Routes:
 
@@ -35,11 +35,9 @@ View all users - `Get - /api/users`
 
 View user by ID - `Get - /api/users/:userId`
 
-Create a new user - `Post - /api/users` 
-(add text JSON) {"username" : " ", "email" : " "}
+Create a new user - `Post - /api/users` (add text JSON) {"username" : " ", "email" : " "}
 
-Update a user by ID - `Put - /api/users/:userId` 
-(add text JSON) {"username" : " ", "email" : " "}
+Update a user by ID - `Put - /api/users/:userId` (add text JSON) {"username" : " ", "email" : " "}
 
 Delete a user by ID - `Del - /api/users/:userId`
 
@@ -54,16 +52,13 @@ View all thoughts - `Get - /api/thoughts`
 
 View thought by ID - `Get - /api/thoughts/thoughtId`
 
-Create a thought - `Post - /api/thoughts` 
-(add text JSON) {"thoughtText" : " ", "username" : " ", "userId" : " "}
+Create a thought - `Post - /api/thoughts` (add text JSON) {"thoughtText" : " ", "username" : " ", "userId" : " "}
 
-Update a thought by ID - `Put - /api/thoughts/thoughtId` 
-(add text JSON) {"thoughtText" : " "}
+Update a thought by ID - `Put - /api/thoughts/thoughtId` (add text JSON) {"thoughtText" : " "}
 
 Delete a thought by ID - `Del - /api/thoughts/thoughtId`
 
-Create a reaction - `Post - /:thoughtId/reactions` 
-(add text JSON) {"reactionBody" : " ", "username" : " ", "userId" : " "}
+Create a reaction - `Post - /:thoughtId/reactions` (add text JSON) {"reactionBody" : " ", "username" : " ", "userId" : " "}
 
 ## Contributing
 
